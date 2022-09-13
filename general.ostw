@@ -1,0 +1,25 @@
+import "main.ostw";
+
+disabled rule: '=========== GENERAL ===========' {}
+
+rule: 'Track baseHero'
+Event.OngoingPlayer
+if (baseHero != HeroOf())
+{
+  baseHero = HeroOf();
+  effectiveHero = HeroOf();
+  MinWait();
+  LoopIfConditionIsTrue();
+}
+
+rule: 'Track effectiveHero'
+Event.OngoingPlayer
+Player.Echo
+if (IsDuplicating())
+{
+  effectiveHero = HeroBeingDuplicated();
+  WaitUntil(!IsDuplicating(), 9999);
+  effectiveHero = HeroOf();
+  MinWait();
+  LoopIfConditionIsTrue();
+}

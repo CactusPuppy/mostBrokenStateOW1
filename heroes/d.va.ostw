@@ -1,0 +1,56 @@
+import "../main.ostw";
+
+disabled rule: '=========== D.Va ===========' {}
+
+rule: 'D.Va setup'
+Event.OngoingPlayer
+if (effectiveHero == Hero.Dva)
+{
+  SetMaxHealth(EventPlayer(), 200/3);
+  normalHealthPool = AddHealthPoolToPlayer(EventPlayer(), HealthType.Health, IsInAlternateForm() ? 50 : 200, true, true);
+}
+
+rule: 'D.Va slower while firing'
+Event.OngoingPlayer
+if (effectiveHero == Hero.Dva)
+if (IsInAlternateForm() == false)
+if (IsFiringPrimary())
+if (!IsUsingAbility1())
+{
+  SetMoveSpeed(EventPlayer(), 50/60*100);
+  WaitUntil(!IsFiringPrimary() || IsInAlternateForm() || IsUsingAbility1(), 9999);
+  SetMoveSpeed(EventPlayer(), 100);
+  MinWait();
+  LoopIfConditionIsTrue();
+}
+
+rule: 'D.Va boosters increase damage'
+Event.OnDamageDealt
+if (effectiveHero == Hero.Dva)
+if (EventAbility() == Button.Ability1)
+{
+  Damage(Victim(), EventPlayer(), 15);
+}
+
+rule: 'D.Va missiles increase damage'
+Event.OnDamageDealt
+if (effectiveHero == Hero.Dva)
+if (EventAbility() == Button.Ability2)
+{
+  Damage(Victim(), EventPlayer(), EventDamage() * 0.3693181818);
+}
+
+rule: 'D.Va remech does less damage'
+Event.OngoingPlayer
+if (effectiveHero == Hero.Dva)
+if (IsInAlternateForm())
+{
+  WaitUntil(IsDead() || UltimateChargePercent() == 100, 4);
+  AbortIf(IsDead());
+  WaitUntil(IsUsingUltimate(), 9999);
+  SmallMessage(EventPlayer(), "Reducing remech damage");
+  SetDamageDealt(EventPlayer(), 20);
+  WaitUntil(!IsUsingUltimate(), 9999);
+  SmallMessage(EventPlayer(), "Restoring normal damage");
+  SetDamageDealt(EventPlayer(), 100);
+}

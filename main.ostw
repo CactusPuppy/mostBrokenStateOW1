@@ -1,0 +1,13 @@
+import "settings.lobby";
+
+playervar Hero baseHero;
+playervar Hero effectiveHero;
+
+playervar Any normalHealthPool;
+playervar Any armorHealthPool;
+playervar Any shieldHealthPool;
+
+
+import "general.ostw";
+import "heroes/d.va.ostw";
+import "debug.ostw";

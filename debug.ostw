@@ -1,0 +1,8 @@
+import "main.ostw";
+
+rule: "DEBUG SANDBOX"
+Event.OngoingPlayer
+if (IsButtonHeld(Button: Button.Interact))
+{
+  CreateDummyBot(RandomValueInArray(AllHeroes()), OppositeTeamOf(TeamOf()), -1, PositionOf(), FacingDirectionOf());
+}
