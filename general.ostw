@@ -6,13 +6,39 @@ rule: 'Track baseHero'
 Event.OngoingPlayer
 if (baseHero != HeroOf())
 {
+  cleanupHero();
   baseHero = HeroOf();
   effectiveHero = HeroOf();
   MinWait();
   LoopIfConditionIsTrue();
 }
 
-rule: 'Track effectiveHero'
+void cleanupHero() playervar '[general.ostw] Clean up previous hero stuff'
+{
+  AbortIf(baseHero == null);
+  RemoveAllHealthPoolsFromPlayer(EventPlayer());
+  SetMaxHealth(EventPlayer(), 100);
+  switch (baseHero) {
+    // TODO
+  }
+}
+
+void setupHero() playervar '[general.ostw] Set up new hero stuff'
+{
+  switch (baseHero) {
+    case Hero.Dva:
+      setupDVa();
+      break;
+    case Hero.Orisa:
+      setupOrisa();
+      break;
+    case Hero.Reinhardt:
+      setupReinhardt();
+      break;
+  }
+}
+
+rule: '[general.ostw] Track effectiveHero'
 Event.OngoingPlayer
 Player.Echo
 if (IsDuplicating())

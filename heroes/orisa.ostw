@@ -1,0 +1,17 @@
+import "../main.ostw";
+
+void setupOrisa() playervar '[heroes/orisa.ostw] Set up Orisa'
+{
+  SetMaxHealth(EventPlayer(), 80);
+  AddHealthPoolToPlayer(EventPlayer(), HealthType.Health, 40, true, false);
+}
+
+rule: "[heroes/orisa.ostw] Increase Fortify effectiveness"
+Event.OngoingPlayer
+if (baseHero == Hero.Orisa)
+if (IsUsingAbility1())
+{
+  SetDamageReceived(EventPlayer(), 5/6*100);
+  WaitUntil(!IsUsingAbility1(), 4);
+  SetDamageReceived(EventPlayer(), 100);
+}

@@ -10,4 +10,6 @@ playervar Any shieldHealthPool;
 
 import "general.ostw";
 import "heroes/d.va.ostw";
+import "heroes/orisa.ostw";
+import "heroes/reinhardt.ostw";
 import "debug.ostw";

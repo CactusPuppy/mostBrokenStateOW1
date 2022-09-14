@@ -1,0 +1,6 @@
+import "../main.ostw";
+
+void setupReinhardt() '[heroes/reinhardt.ostw] Setup Reinhardt'
+{
+  AddHealthPoolToPlayer(EventPlayer(), HealthType.Armor, 50, true, false);
+}

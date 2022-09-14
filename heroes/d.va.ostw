@@ -2,15 +2,13 @@ import "../main.ostw";
 
 disabled rule: '=========== D.Va ===========' {}
 
-rule: 'D.Va setup'
-Event.OngoingPlayer
-if (effectiveHero == Hero.Dva)
+void setupDVa() playervar '[heroes/d.va.ostw] D.Va setup'
 {
   SetMaxHealth(EventPlayer(), 200/3);
-  normalHealthPool = AddHealthPoolToPlayer(EventPlayer(), HealthType.Health, IsInAlternateForm() ? 50 : 200, true, true);
+  AddHealthPoolToPlayer(EventPlayer(), HealthType.Health, IsInAlternateForm() ? 50 : 200, true, true);
 }
 
-rule: 'D.Va slower while firing'
+rule: '[heroes/d.va.ostw] D.Va slower while firing'
 Event.OngoingPlayer
 if (effectiveHero == Hero.Dva)
 if (IsInAlternateForm() == false)
@@ -24,7 +22,7 @@ if (!IsUsingAbility1())
   LoopIfConditionIsTrue();
 }
 
-rule: 'D.Va boosters increase damage'
+rule: '[heroes/d.va.ostw] D.Va boosters increase damage'
 Event.OnDamageDealt
 if (effectiveHero == Hero.Dva)
 if (EventAbility() == Button.Ability1)
@@ -32,7 +30,7 @@ if (EventAbility() == Button.Ability1)
   Damage(Victim(), EventPlayer(), 15);
 }
 
-rule: 'D.Va missiles increase damage'
+rule: '[heroes/d.va.ostw] D.Va missiles increase damage'
 Event.OnDamageDealt
 if (effectiveHero == Hero.Dva)
 if (EventAbility() == Button.Ability2)
@@ -40,7 +38,7 @@ if (EventAbility() == Button.Ability2)
   Damage(Victim(), EventPlayer(), EventDamage() * 0.3693181818);
 }
 
-rule: 'D.Va remech does less damage'
+rule: '[heroes/d.va.ostw] D.Va remech does less damage'
 Event.OngoingPlayer
 if (effectiveHero == Hero.Dva)
 if (IsInAlternateForm())
