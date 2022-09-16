@@ -1,0 +1,9 @@
+import "../main.ostw";
+
+rule: "[heroes/zarya.ostw] Increase beam damage"
+Event.OnDamageDealt
+if (effectiveHero == Hero.Zarya)
+if (EventAbility() == Button.PrimaryFire)
+{
+  Damage(Victim(), Attacker(), 0.15 * EventDamage());
+}

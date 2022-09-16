@@ -1,0 +1,26 @@
+import "../main.ostw";
+
+rule: "[heroes/sigma.ostw] Increase Sigma primary fire damage"
+Event.OnDamageDealt
+if (effectiveHero == Hero.Sigma)
+if (EventAbility() == Button.PrimaryFire)
+{
+  Damage(Victim(), Attacker(), 5);
+}
+
+rule: "[heroes/sigma.ostw] Increase Sigma rock damage"
+Event.OnDamageDealt
+if (effectiveHero == Hero.Sigma)
+if (EventAbility() == Button.Ability2)
+{
+  Damage(Victim(), Attacker(), 10);
+}
+
+rule: "[heroes/sigma.ostw] Shorten barrier redploy cooldown"
+Event.OngoingPlayer
+if (effectiveHero == Hero.Sigma)
+if (AbilityCooldown(Button: Button.SecondaryFire) > 0)
+if (AbilityCooldown(Button: Button.SecondaryFire) < 3)
+{
+  SetAbilityCooldown(Button: Button.SecondaryFire, Cooldown: 0);
+}

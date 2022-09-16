@@ -4,14 +4,24 @@
   "Heroes": {
     "General": {
       "General": {
-        "Spawn With Ultimate Ready": true,
-        "Ultimate Generation": 89.28571429
+        "Spawn With Ultimate Ready": true
       },
       "D.va": {
-        "Boosters Cooldown Time": 125
+        "Boosters Cooldown Time": 125,
+        "Ultimate Generation (Self-Destruct)": 89.28571429
       },
       "Orisa": {
-        "Protective Barrier Cooldown Time": 80
+        "Protective Barrier Cooldown Time": 80,
+        "Ultimate Generation (Supercharger)": 89.28571429
+      },
+      "Sigma": {
+        "Ultimate Generation (Gravitic Flux)": 90.32258065
+      },
+      "Wrecking Ball": {
+        "Grappling Claw Knockback Scalar": 130
+      },
+      "Zarya": {
+        "Ultimate Generation (Graviton Surge)": 140
       }
     }
   },

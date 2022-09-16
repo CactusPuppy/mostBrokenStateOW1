@@ -1,0 +1,23 @@
+import "../main.ostw";
+
+playervar Any wreckingBallAdditionalShields;
+
+rule: "[heroes/wrecking_ball.ostw] Increase shield gain"
+Event.OngoingPlayer
+if (effectiveHero == Hero.WreckingBall)
+if (IsUsingAbility2())
+{
+  wreckingBallAdditionalShields = AddHealthPoolToPlayer(
+    Player: EventPlayer(),
+    HealthType: HealthType.Shields,
+    MaxHealth: CountOf(
+      PlayersWithinRadius(
+        PositionOf(EventPlayer()),
+        8,
+        OppositeTeamOf(TeamOf()),
+        RadiusLOS.SurfacesAndEnemyBarriers).FilteredArray(
+          player => IsAlive(player))),
+    Recoverable: false);
+  WaitUntil(effectiveHero != Hero.WreckingBall || !IsUsingAbility2(), 9);
+  RemoveHealthPoolFromPlayer(wreckingBallAdditionalShields);
+}
