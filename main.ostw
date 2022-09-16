@@ -17,4 +17,8 @@ import "heroes/sigma.ostw";
 import "heroes/wrecking_ball.ostw";
 import "heroes/zarya.ostw";
 
+import "heroes/ashe.ostw";
+import "heroes/bastion.ostw";
+import "heroes/cassidy.ostw";
+
 import "debug.ostw";

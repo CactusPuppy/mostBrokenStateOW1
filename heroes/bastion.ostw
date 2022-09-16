@@ -1,0 +1,13 @@
+import "../main.ostw";
+
+rule: "[heroes/bastion.ostw] Emulate Ironclad increased effectiveness"
+Event.OngoingPlayer
+if (effectiveHero == Hero.Bastion)
+if (IsInAlternateForm())
+{
+  SetMaxHealth(EventPlayer(), 123.07692308);
+  SetHealingReceived(EventPlayer(), 81.25);
+  WaitUntil(effectiveHero != Hero.Bastion || !IsInAlternateForm(), 9999);
+  SetMaxHealth(EventPlayer(), 100);
+  SetHealingReceived(EventPlayer(), 100);
+}

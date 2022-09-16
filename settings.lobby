@@ -22,6 +22,16 @@
       },
       "Zarya": {
         "Ultimate Generation (Graviton Surge)": 140
+      },
+      "Ashe": {
+        "Ammunition Clip Size Scalar": 125,
+        "Dynamite Cooldown Time": 83.33333333
+      },
+      "Bastion": {
+        "Ammunition Clip Size Scalar": 71.42857143,
+        "Ultimate Generation (Configuration: Tank)": 111.3253,
+        "Self-Repair Maximum Time": 120,
+        "Healing Dealt": 83.3333333
       }
     }
   },

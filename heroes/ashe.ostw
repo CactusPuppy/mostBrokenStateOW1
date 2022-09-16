@@ -1,0 +1,10 @@
+import "../main.ostw";
+
+rule: "[heroes/ashe.ostw] Increase Dynamite initial burst"
+Event.OnDamageDealt
+if (effectiveHero == Hero.Ashe)
+if (EventAbility() == Button.Ability2)
+if (EventDamage() >= 20)
+{
+  Damage(Victim(), Attacker(), 1.5 * EventDamage());
+}

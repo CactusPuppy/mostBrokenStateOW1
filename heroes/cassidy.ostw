@@ -1,0 +1,23 @@
+import "../main.ostw";
+
+rule: "[heroes/cassidy.ostw] Increase Roll distance"
+Event.OngoingPlayer
+if (effectiveHero == Hero.Cassidy)
+if (IsUsingAbility1())
+{
+  SetMoveSpeed(EventPlayer(), 120);
+  WaitUntil(!IsUsingAbility1(), 0.4);
+  SetMoveSpeed(EventPlayer(), 100);
+}
+
+rule: "[heroes/cassidy.ostw] Increase reload speed"
+Event.OngoingPlayer
+if (effectiveHero == Hero.Cassidy)
+if (IsReloading())
+{
+  WaitUntil(!IsReloading() || effectiveHero != Hero.Cassidy, 1.2);
+  if (effectiveHero == Hero.Cassidy && IsReloading()) {
+    SetAmmo(EventPlayer(), 0, MaxAmmo(EventPlayer(), 0));
+    CancelPrimaryAction();
+  }
+}
