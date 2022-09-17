@@ -28,5 +28,6 @@ import "heroes/mei.ostw";
 import "heroes/sombra.ostw";
 import "heroes/symmetra.ostw";
 import "heroes/tracer.ostw";
+import "heroes/widowmaker.ostw";
 
 import "debug.ostw";
