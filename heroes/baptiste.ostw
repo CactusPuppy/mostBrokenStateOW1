@@ -3,10 +3,6 @@ import "../main.ostw";
 playervar Any baptisteSelfHealMod;
 
 void setupBaptiste() playervar "[heroes/baptiste.ostw] Setup Baptiste" {
-  baptisteSelfHealMod = StartHealingModification(EventPlayer(), EventPlayer(), 200, HealingModificationRev.None);
+  selfHealMod = StartHealingModification(EventPlayer(), EventPlayer(), 200, HealingModificationRev.None);
   SetMaxAmmo(EventPlayer(), 1, 12);
-}
-
-void cleanupBaptiste() playervar "[heroes/baptiste.ostw] Cleanup Baptiste" {
-  StopHealingModification(baptisteSelfHealMod);
 }

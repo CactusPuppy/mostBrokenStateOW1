@@ -7,6 +7,8 @@ playervar Any normalHealthPool;
 playervar Any armorHealthPool;
 playervar Any shieldHealthPool;
 
+playervar Any selfHealMod;
+
 
 import "general.ostw";
 
