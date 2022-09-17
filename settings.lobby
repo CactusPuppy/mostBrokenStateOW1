@@ -4,7 +4,7 @@
   "Heroes": {
     "General": {
       "General": {
-        "Spawn With Ultimate Ready": true
+        "Spawn With Ultimate Ready": true // TODO: REMOVE THIS
       },
       "D.va": {
         "Boosters Cooldown Time": 125,
