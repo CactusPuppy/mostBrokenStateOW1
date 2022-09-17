@@ -20,9 +20,9 @@ rule: "[heroes/ana.ostw] Increase sleep dart duration"
 Event.OnDamageDealt
 if (EventAbility() == Button.Ability1)
 {
-  WaitUntil(HasStatus(Victim(), Status.Asleep), 0.05);
-  AbortIf(!HasStatus(Victim(), Status.Asleep));
-  SetStatus(Victim(), Attacker(), Status.Asleep, 5.95);
+  WaitUntil(HasStatus(Victim(), Status.Asleep), 0.064);
+  ClearStatus(Victim(), Status.Asleep);
+  SetStatus(Victim(), Attacker(), Status.Asleep, 6);
 }
 
 rule: "[heroes/ana.ostw] Increase movespeed of nano'd target"
