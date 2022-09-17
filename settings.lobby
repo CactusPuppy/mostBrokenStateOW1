@@ -56,6 +56,16 @@
         "Ammunition Clip Size Scalar": 166.66666667,
         "Weapon Freeze Rate Scalar": 87.79,
         "Weapon Freeze Minimum": 30
+      },
+      "Soldier: 76": {
+        "Healing Dealt": 114.28571429
+      },
+      "Sombra": {
+        "Ultimate Generation (EMP)": 112,
+        "Translocator Cooldown Time": 66
+      },
+      "Symmetra": {
+        "Teleporter Cooldown Time": 120
       }
     }
   },

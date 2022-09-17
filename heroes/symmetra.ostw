@@ -1,0 +1,9 @@
+import "../main.ostw";
+
+rule: "[heroes/symmetra.ostw] Increase Primary Fire damage"
+Event.OnDamageDealt
+if (effectiveHero == Hero.Symmetra)
+if (EventAbility() == Button.PrimaryFire)
+{
+  Damage(Victim(), Attacker(), 1/12 * EventDamage());
+}
