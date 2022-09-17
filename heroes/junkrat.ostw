@@ -1,0 +1,11 @@
+import "../main.ostw";
+
+rule: "[heroes/junkrat.ostw] Increase direct damage"
+Event.OnDamageDealt
+if (effectiveHero == Hero.Junkrat)
+if (EventAbility() == Button.PrimaryFire)
+# Accounts for armor resistance but not any significant damage resistance buffs
+if (EventDamage() >= 115)
+{
+  Damage(Victim(), Attacker(), 10);
+}

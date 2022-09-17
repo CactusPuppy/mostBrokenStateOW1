@@ -23,5 +23,6 @@ import "heroes/cassidy.ostw";
 import "heroes/doomfist.ostw";
 import "heroes/echo.ostw";
 import "heroes/hanzo.ostw";
+import "heroes/junkrat.ostw";
 
 import "debug.ostw";
