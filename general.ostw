@@ -19,7 +19,9 @@ void cleanupHero() playervar '[general.ostw] Clean up previous hero stuff'
   RemoveAllHealthPoolsFromPlayer(EventPlayer());
   SetMaxHealth(EventPlayer(), 100);
   switch (baseHero) {
-    // TODO
+    case Hero.Baptiste:
+      cleanupBaptiste();
+      break;
   }
 }
 
@@ -34,6 +36,9 @@ void setupHero() playervar '[general.ostw] Set up new hero stuff'
       break;
     case Hero.Reinhardt:
       setupReinhardt();
+      break;
+    case Hero.Baptiste:
+      setupBaptiste();
       break;
   }
 }
