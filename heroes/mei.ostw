@@ -1,0 +1,12 @@
+import "../main.ostw";
+
+rule: "[heroes/mei.ostw] Increase icicle shot cost"
+Event.OngoingPlayer
+if (effectiveHero == Hero.Mei)
+if (IsFiringSecondary())
+{
+  WaitUntil(EvaluateOnce(Ammo()) < Ammo(), 0.4);
+  SetAmmo(EventPlayer(), 0, Ammo() - 10);
+  Wait(0.4, WaitBehavior.AbortWhenFalse);
+  LoopIfConditionIsTrue();
+}

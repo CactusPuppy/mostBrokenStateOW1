@@ -50,6 +50,12 @@
         "Storm Arrows Cooldown Time": 80,
         "Lunge Cooldown Time": 80,
         "Ultimate Generation (Dragonstrike)": 112
+      },
+      "Mei": {
+        "Healing Dealt": 73.12792512,
+        "Ammunition Clip Size Scalar": 166.66666667,
+        "Weapon Freeze Rate Scalar": 87.79,
+        "Weapon Freeze Minimum": 30
       }
     }
   },
