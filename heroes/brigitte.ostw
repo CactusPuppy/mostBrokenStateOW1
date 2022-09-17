@@ -1,0 +1,18 @@
+import "../main.ostw";
+
+void setupBrigitte() playervar "[heroes/brigitte.ostw] Setup Brigitte"
+{
+  AddHealthPoolToPlayer(EventPlayer(), HealthType.Health, 50, true);
+}
+
+rule: "[heroes/brigitte.ostw] When Brig's shield bash connects, buff it"
+Event.OnDamageDealt
+if (effectiveHero == Hero.Brigitte)
+if (IsFiringSecondary())
+if (EventAbility() == Button.PrimaryFire)
+{
+  Damage(Victim(), Attacker(), 45);
+  WaitUntil(HasStatus(Victim(), Status.Stunned), 0.064);
+  ClearStatus(Victim(), Status.Stunned);
+  SetStatus(Victim(), Attacker(), Status.Stunned, 1);
+}

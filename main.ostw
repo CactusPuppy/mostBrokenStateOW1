@@ -33,5 +33,6 @@ import "heroes/widowmaker.ostw";
 
 import "heroes/ana.ostw";
 import "heroes/baptiste.ostw";
+import "heroes/brigitte.ostw";
 
 import "debug.ostw";

@@ -81,6 +81,12 @@
         "Ultimate Generation (Amplification Matrix)": 132,
         "Regenerative Burst Cooldown Time": 115.38461538,
         "Immortality Field Cooldown Time": 80
+      },
+      "Brigitte": {
+        "Barrier Shield Cooldown Time": 60,
+        "Barrier Shield Recharge Rate": 117.64705882,
+        "Shield Bash Cooldown Time": 71.42857143,
+        "Ultimate Generation (Rally)": 124.4444444444
       }
     }
   },
