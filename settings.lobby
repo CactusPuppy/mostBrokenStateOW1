@@ -87,6 +87,9 @@
         "Barrier Shield Recharge Rate": 117.64705882,
         "Shield Bash Cooldown Time": 71.42857143,
         "Ultimate Generation (Rally)": 124.4444444444
+      },
+      "Lúcio": {
+        "Ultimate Generation (Sound Barrier)": 112
       }
     }
   },
