@@ -1,0 +1,36 @@
+import "../main.ostw";
+
+rule: "[heroes/ana.ostw] Increase primary damage"
+Event.OnDamageDealt
+if (effectiveHero == Hero.Ana)
+if (EventAbility() == Button.PrimaryFire)
+{
+  Damage(Victim(), Attacker(), 1/7 * EventDamage());
+}
+
+rule: "[heroes/ana.ostw] Increase primary healing"
+Event.OnHealingDealt
+if (effectiveHero == Hero.Ana)
+if (EventAbility() == Button.PrimaryFire)
+{
+  Heal(Healee(), Healer(), 1/14 * EventHealing());
+}
+
+rule: "[heroes/ana.ostw] Increase sleep dart duration"
+Event.OnDamageDealt
+if (EventAbility() == Button.Ability1)
+{
+  WaitUntil(HasStatus(Victim(), Status.Asleep), 0.05);
+  AbortIf(!HasStatus(Victim(), Status.Asleep));
+  SetStatus(Victim(), Attacker(), Status.Asleep, 5.95);
+}
+
+rule: "[heroes/ana.ostw] Increase movespeed of nano'd target"
+Event.OnHealingDealt
+if (effectiveHero == Hero.Ana)
+if (EventAbility() == Button.Ultimate)
+{
+  SetMoveSpeed(Healee(), 130);
+  WaitUntil(IsDead(Healee()), 8);
+  SetMoveSpeed(Healee(), 100);
+}

@@ -72,6 +72,10 @@
       },
       "Widowmaker": {
         "Ultimate Generation (Infra-sight)": 140
+      },
+      "Ana": {
+        "Ammunition Clip Size Scalar": 83.33333333,
+        "Ultimate Generation (Nano Boost)": 161.53846154
       }
     }
   },

@@ -31,4 +31,6 @@ import "heroes/symmetra.ostw";
 import "heroes/tracer.ostw";
 import "heroes/widowmaker.ostw";
 
+import "heroes/ana.ostw";
+
 import "debug.ostw";
