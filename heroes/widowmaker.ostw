@@ -6,9 +6,7 @@ if (effectiveHero == Hero.Widowmaker)
 if (IsButtonHeld(Button: Button.SecondaryFire))
 if (EventAbility() == Button.PrimaryFire)
 if (EventWasCriticalHit() == false)
-if ([
-  Status.Asleep, Status.Frozen, Status.Stunned, Status.KnockedDown
-].IsTrueForAny(status => HasStatus(EventPlayer(), status)) == false)
+if (IsFiringSecondary())
 {
   Damage(Victim(), Attacker(), 0.25 * EventDamage());
 }
