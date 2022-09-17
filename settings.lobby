@@ -76,6 +76,11 @@
       "Ana": {
         "Ammunition Clip Size Scalar": 83.33333333,
         "Ultimate Generation (Nano Boost)": 161.53846154
+      },
+      "Baptiste": {
+        "Ultimate Generation (Amplification Matrix)": 132,
+        "Regenerative Burst Cooldown Time": 115.38461538,
+        "Immortality Field Cooldown Time": 80
       }
     }
   },

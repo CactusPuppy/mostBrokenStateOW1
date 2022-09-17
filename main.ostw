@@ -32,5 +32,6 @@ import "heroes/tracer.ostw";
 import "heroes/widowmaker.ostw";
 
 import "heroes/ana.ostw";
+import "heroes/baptiste.ostw";
 
 import "debug.ostw";
