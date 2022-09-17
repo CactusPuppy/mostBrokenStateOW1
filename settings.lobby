@@ -66,6 +66,9 @@
       },
       "Symmetra": {
         "Teleporter Cooldown Time": 120
+      },
+      "Tracer": {
+        "Ultimate Generation (Pulse Bomb)": 140
       }
     }
   },

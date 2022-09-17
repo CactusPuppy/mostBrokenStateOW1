@@ -27,5 +27,6 @@ import "heroes/junkrat.ostw";
 import "heroes/mei.ostw";
 import "heroes/sombra.ostw";
 import "heroes/symmetra.ostw";
+import "heroes/tracer.ostw";
 
 import "debug.ostw";

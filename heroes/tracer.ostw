@@ -1,0 +1,9 @@
+import "../main.ostw";
+
+rule: "[heroes/tracer.ostw] Increase Pulse Bomb damage"
+Event.OnDamageDealt
+if (effectiveHero == Hero.Tracer)
+if (EventAbility() == Button.Ultimate)
+{
+  Damage(Victim(), Attacker(), 50/350 * EventDamage());
+}
