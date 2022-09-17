@@ -1,0 +1,20 @@
+import "../main.ostw";
+
+rule: "[heroes/doomfist.ostw] Make outer ring of Meteor Strike do more damage"
+Event.OnDamageDealt
+if (effectiveHero == Hero.Doomfist)
+if (EventAbility() == Button.Ultimate)
+if (EventDamage() <= 200)
+{
+  Damage(Victim(), Attacker(), 1.5 * EventDamage());
+}
+
+rule: "[heroes/doomfist.ostw] Make uppercut reduce player throttle for longer"
+Event.OnDamageTaken
+if (Attacker().effectiveHero == Hero.Doomfist)
+if (EventAbility() == Button.Ability1)
+{
+  StartTransformingThrottle(Victim(), 0.05, 0.05, FacingDirectionOf());
+  WaitUntil(IsDead() || Attacker().effectiveHero != Hero.Doomfist, 3);
+  StopTransformingThrottle();
+}

@@ -1,0 +1,9 @@
+import "../main.ostw";
+
+rule: "[heroes/hanzo.ostw] Increase Storm Arrow damage"
+Event.OnDamageDealt
+if (effectiveHero == Hero.Hanzo)
+if (EventAbility() == Button.Ability2)
+{
+  Damage(Victim(), Attacker(), 10);
+}

@@ -1,0 +1,12 @@
+import "../main.ostw";
+
+rule: "[heroes/echo.ostw] Full heal when duplicate ends"
+Event.OngoingPlayer
+Player.Echo
+if (IsDuplicating())
+{
+  WaitUntil(!IsDuplicating(), 15.1);
+  if (IsAlive()) {
+    SetPlayerHealth(Amount: MaxHealth());
+  }
+}

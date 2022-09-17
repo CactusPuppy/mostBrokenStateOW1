@@ -32,6 +32,24 @@
         "Ultimate Generation (Configuration: Tank)": 111.3253,
         "Self-Repair Maximum Time": 120,
         "Healing Dealt": 83.3333333
+      },
+      "Doomfist": {
+        "Ultimate Generation (Meteor Strike)": 112
+      },
+      "Echo": {
+        "Ammunition Clip Size Scalar": 125,
+        "Ultimate Generation (Duplicate)": 115
+      },
+      "Genji": {
+        "Ammunition Clip Size Scalar": 80,
+        "Ultimate Generation (Dragonblade)": 161,
+        "Ultimate Duration": 133
+      },
+      "Hanzo": {
+        "Storm Arrows Quantity": 6,
+        "Storm Arrows Cooldown Time": 80,
+        "Lunge Cooldown Time": 80,
+        "Ultimate Generation (Dragonstrike)": 112
       }
     }
   },

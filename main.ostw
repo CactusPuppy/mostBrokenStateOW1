@@ -20,5 +20,8 @@ import "heroes/zarya.ostw";
 import "heroes/ashe.ostw";
 import "heroes/bastion.ostw";
 import "heroes/cassidy.ostw";
+import "heroes/doomfist.ostw";
+import "heroes/echo.ostw";
+import "heroes/hanzo.ostw";
 
 import "debug.ostw";
