@@ -22,6 +22,7 @@ import "heroes/bastion.ostw";
 import "heroes/cassidy.ostw";
 import "heroes/doomfist.ostw";
 import "heroes/echo.ostw";
+import "heroes/genji.ostw";
 import "heroes/hanzo.ostw";
 import "heroes/junkrat.ostw";
 import "heroes/mei.ostw";

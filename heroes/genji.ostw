@@ -1,0 +1,13 @@
+import "../main.ostw";
+
+rule: "[heroes/genji.ostw] Restore triple-jump"
+Event.OngoingPlayer
+if (effectiveHero == Hero.Genji)
+if (IsOnWall())
+{
+  WaitUntil(!IsOnWall(), 4);
+  # Fake restoring double-jump
+  if (IsInAir()) {
+    SetStatus(EventPlayer(), null, Status.KnockedDown, 0.016);
+  }
+}
