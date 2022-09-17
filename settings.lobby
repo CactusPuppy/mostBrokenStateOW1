@@ -94,6 +94,12 @@
       "Mercy": {
         "Healing Dealt": 110,
         "Ultimate Generation (Valkyrie)": 112
+      },
+      "Moira": {
+        "Ultimate Generation (Coalescence)": 131.7647058824,
+        "Biotic Energy Maximum": 112,
+        "Healing Dealt": 115,
+        "Biotic Orb Cooldown Time": 125
       }
     }
   },
