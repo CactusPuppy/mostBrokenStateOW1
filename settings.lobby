@@ -100,6 +100,9 @@
         "Biotic Energy Maximum": 112,
         "Healing Dealt": 115,
         "Biotic Orb Cooldown Time": 125
+      },
+      "Zenyatta": {
+        "Ultimate Generation (Transcendence)": 140
       }
     }
   },
