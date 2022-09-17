@@ -90,6 +90,10 @@
       },
       "Lúcio": {
         "Ultimate Generation (Sound Barrier)": 112
+      },
+      "Mercy": {
+        "Healing Dealt": 110,
+        "Ultimate Generation (Valkyrie)": 112
       }
     }
   },

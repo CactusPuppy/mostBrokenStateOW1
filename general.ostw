@@ -39,6 +39,9 @@ void setupHero() playervar '[general.ostw] Set up new hero stuff'
     case Hero.Brigitte:
       setupBrigitte();
       break;
+    case Hero.Mercy:
+      setupMercy();
+      break;
   }
 }
 
