@@ -5,7 +5,7 @@ Event.OngoingPlayer
 if (effectiveHero == Hero.Sombra)
 if (IsUsingAbility1())
 {
-  SetMoveSpeed(EventPlayer(), 10/11);
+  SetMoveSpeed(EventPlayer(), 10/11 * 100);
   WaitUntil(!IsUsingAbility1() || effectiveHero != Hero.Sombra, 9999);
   SetMoveSpeed(EventPlayer(), 100);
 }
