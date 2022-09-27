@@ -9,6 +9,7 @@ if (baseHero != HeroOf())
   cleanupHero();
   baseHero = HeroOf();
   effectiveHero = HeroOf();
+  setupHero();
   MinWait();
   LoopIfConditionIsTrue();
 }
