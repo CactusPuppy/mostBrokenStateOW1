@@ -1,5 +1,6 @@
 import "../main.ostw";
 
+playervar Number bastionDamageIroncladMod;
 rule: "[heroes/bastion.ostw] Increase Recon mode ammo"
 Event.OngoingPlayer
 if (effectiveHero == Hero.Bastion)
@@ -15,9 +16,7 @@ Event.OngoingPlayer
 if (effectiveHero == Hero.Bastion)
 if (IsInAlternateForm())
 {
-  SetMaxHealth(EventPlayer(), 123.07692308);
-  SetHealingReceived(EventPlayer(), 81.25);
+  bastionDamageIroncladMod = StartDamageModification(EventPlayer(), AllPlayers(), 81.25, DamageModificationRev.ReceiversAndDamagers);
   WaitUntil(effectiveHero != Hero.Bastion || !IsInAlternateForm(), 9999);
-  SetMaxHealth(EventPlayer(), 100);
-  SetHealingReceived(EventPlayer(), 100);
+  StopDamageModification(bastionDamageIroncladMod);
 }
