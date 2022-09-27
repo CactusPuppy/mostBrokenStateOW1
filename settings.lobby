@@ -11,6 +11,7 @@
         "Ultimate Generation (Self-Destruct)": 89.28571429
       },
       "Orisa": {
+        "Health": 150,
         "Protective Barrier Cooldown Time": 80,
         "Ultimate Generation (Supercharger)": 89.28571429
       },

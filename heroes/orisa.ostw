@@ -2,8 +2,7 @@ import "../main.ostw";
 
 void setupOrisa() playervar '[heroes/orisa.ostw] Set up Orisa'
 {
-  SetMaxHealth(EventPlayer(), 80);
-  AddHealthPoolToPlayer(EventPlayer(), HealthType.Health, 40, true, false);
+  SetMaxHealth(EventPlayer(), 66.6666666667);
 }
 
 rule: "[heroes/orisa.ostw] Increase Fortify effectiveness"
