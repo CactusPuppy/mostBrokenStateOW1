@@ -18,6 +18,7 @@ if (EventAbility() == Button.PrimaryFire)
 
 rule: "[heroes/ana.ostw] Increase sleep dart duration"
 Event.OnDamageDealt
+if (effectiveHero == Hero.Ana)
 if (EventAbility() == Button.Ability1)
 {
   WaitUntil(HasStatus(Victim(), Status.Asleep), 0.064);
