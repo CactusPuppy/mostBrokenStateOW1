@@ -4,18 +4,18 @@ void setupMercy() playervar "[heroes/mercy.ostw] Compensate for buffed healing i
   selfHealMod = StartHealingModification(EventPlayer(), EventPlayer(), 10/11 * 100, HealingModificationRev.None);
 }
 
-rule: "[heroes/mercy.ostw] Reset resurrect cooldown at the start of Valkyrie"
-Event.OngoingPlayer
-if (effectiveHero == Hero.Mercy)
-if (IsUsingUltimate())
-{
-  SetAbilityCooldown(EventPlayer(), Button.Ability2, 0);
-}
-
 rule: "[heroes/mercy.ostw] Lower resurrect cooldown during Valkyrie"
 Event.OngoingPlayer
 if (effectiveHero == Hero.Mercy)
 if (IsUsingUltimate())
 if (AbilityCooldown(Button: Button.Ability2) > 0) {
   SetAbilityCooldown(Button: Button.Ability2, Cooldown: 10);
+}
+
+rule: "[heroes/mercy.ostw] Reset resurrect cooldown at the start of Valkyrie"
+Event.OngoingPlayer
+if (effectiveHero == Hero.Mercy)
+if (IsUsingUltimate())
+{
+  SetAbilityCooldown(EventPlayer(), Button.Ability2, 0);
 }
