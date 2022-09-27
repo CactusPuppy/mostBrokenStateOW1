@@ -46,9 +46,9 @@ if (IsInAlternateForm())
   WaitUntil(IsDead() || UltimateChargePercent() == 100, 4);
   AbortIf(IsDead());
   WaitUntil(IsUsingUltimate(), 9999);
-  SmallMessage(EventPlayer(), "Reducing remech damage");
+  // SmallMessage(EventPlayer(), "Reducing remech damage");
   SetDamageDealt(EventPlayer(), 20);
   WaitUntil(!IsUsingUltimate(), 9999);
-  SmallMessage(EventPlayer(), "Restoring normal damage");
+  // SmallMessage(EventPlayer(), "Restoring normal damage");
   SetDamageDealt(EventPlayer(), 100);
 }
