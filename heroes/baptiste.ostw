@@ -5,4 +5,5 @@ playervar Any baptisteSelfHealMod;
 void setupBaptiste() playervar "[heroes/baptiste.ostw] Setup Baptiste" {
   selfHealMod = StartHealingModification(EventPlayer(), EventPlayer(), 200, HealingModificationRev.None);
   SetMaxAmmo(EventPlayer(), 1, 12);
+  SetAmmo(EventPlayer(), 1, MaxAmmo(EventPlayer(), 1));
 }
