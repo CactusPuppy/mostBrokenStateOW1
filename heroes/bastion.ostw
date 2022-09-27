@@ -1,5 +1,15 @@
 import "../main.ostw";
 
+rule: "[heroes/bastion.ostw] Increase Recon mode ammo"
+Event.OngoingPlayer
+if (effectiveHero == Hero.Bastion)
+if (!IsInAlternateForm())
+{
+  SetMaxAmmo(EventPlayer(), 0, 25);
+  SetAmmo(EventPlayer(), 0, MaxAmmo(EventPlayer(), 0));
+}
+
+
 rule: "[heroes/bastion.ostw] Emulate Ironclad increased effectiveness"
 Event.OngoingPlayer
 if (effectiveHero == Hero.Bastion)
