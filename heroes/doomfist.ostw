@@ -6,7 +6,7 @@ if (effectiveHero == Hero.Doomfist)
 if (EventAbility() == Button.Ultimate)
 if (EventDamage() <= 200)
 {
-  Damage(Victim(), Attacker(), 1.5 * EventDamage());
+  Damage(Victim(), Attacker(), 0.5 * EventDamage());
 }
 
 rule: "[heroes/doomfist.ostw] Make uppercut reduce player throttle for longer"
