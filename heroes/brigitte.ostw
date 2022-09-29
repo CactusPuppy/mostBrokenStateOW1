@@ -3,7 +3,13 @@ import "../main.ostw";
 void setupBrigitte() playervar "[heroes/brigitte.ostw] Setup Brigitte"
 {
   SetMaxHealth(EventPlayer(), 41.6666666667);
+  SetHealingDealt(EventPlayer(), 1);
   AddHealthPoolToPlayer(EventPlayer(), HealthType.Health, 50, true);
+}
+
+void cleanupBrigitte() playervar "[heroes/brigitte.ostw] Cleanup Brigitte"
+{
+  SetHealingDealt(EventPlayer(), 100);
 }
 
 rule: "[heroes/brigitte.ostw] When Brig's shield bash connects, buff it"
@@ -16,4 +22,33 @@ if (EventAbility() == Button.PrimaryFire)
   WaitUntil(HasStatus(Victim(), Status.Stunned), 0.064);
   ClearStatus(Victim(), Status.Stunned);
   SetStatus(Victim(), Attacker(), Status.Stunned, 1);
+}
+
+playervar Any brigOverheal;
+
+rule: "[heroes/brigitte.ostw] Only allow one charge of Repair Pack"
+Event.OngoingPlayer
+if (effectiveHero == Hero.Brigitte)
+if (AbilityCharge(EventPlayer(), Button.Ability2) < 3)
+{
+  SetAbility2Enabled(EventPlayer(), false);
+  WaitUntil(effectiveHero != Hero.Brigitte || AbilityCharge(EventPlayer(), Button.Ability2) == 3, 6);
+  SetAbility2Enabled(EventPlayer(), true);
+}
+
+rule: "[heroes/brigitte.ostw] Instant heal repair pack"
+Event.OnHealingTaken
+if (Healer().effectiveHero == Hero.Brigitte)
+if (EventAbility() == Button.Ability2)
+{
+  if (MaxHealth(Healee()) - Health(Healee()) < 150) {
+    AddHealthPoolToPlayer(Healee(), HealthType.Armor, Min(
+      150 - (MaxHealth(Healee()) - Health(Healee())),
+      75
+    ), false, false);
+    brigOverheal = LastCreatedHealthPool();
+  }
+  Heal(Healee(), Healer(), 150);
+  Wait(6, WaitBehavior.IgnoreCondition);
+  RemoveHealthPoolFromPlayer(brigOverheal);
 }
