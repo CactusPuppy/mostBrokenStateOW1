@@ -16,7 +16,7 @@ if (EventAbility() == Button.Ability2)
   Damage(Victim(), Attacker(), 10);
 }
 
-rule: "[heroes/sigma.ostw] Shorten barrier redploy cooldown"
+rule: "[heroes/sigma.ostw] Shorten barrier redeploy cooldown"
 Event.OngoingPlayer
 if (effectiveHero == Hero.Sigma)
 if (AbilityCooldown(Button: Button.SecondaryFire) > 0)
