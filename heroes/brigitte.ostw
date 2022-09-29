@@ -2,6 +2,7 @@ import "../main.ostw";
 
 void setupBrigitte() playervar "[heroes/brigitte.ostw] Setup Brigitte"
 {
+  SetMaxHealth(EventPlayer(), 41.6666666667);
   AddHealthPoolToPlayer(EventPlayer(), HealthType.Health, 50, true);
 }
 
