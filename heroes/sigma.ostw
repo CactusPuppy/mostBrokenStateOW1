@@ -22,5 +22,5 @@ if (effectiveHero == Hero.Sigma)
 if (AbilityCooldown(Button: Button.SecondaryFire) > 0)
 if (AbilityCooldown(Button: Button.SecondaryFire) < 3)
 {
-  SetAbilityCooldown(Button: Button.SecondaryFire, Cooldown: 0);
+  SetAbilityCooldown(Button: Button.SecondaryFire, Cooldown: 0.25);
 }
