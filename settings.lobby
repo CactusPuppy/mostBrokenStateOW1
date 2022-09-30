@@ -67,7 +67,8 @@
         "Ultimate Generation (Pulse Bomb)": 140
       },
       "Widowmaker": {
-        "Ultimate Generation (Infra-sight)": 140
+        "Ultimate Generation (Infra-sight)": 140,
+        "Ammunition Clip Size Scalar": 86
       },
       "Ana": {
         "Ammunition Clip Size Scalar": 83.33333333,

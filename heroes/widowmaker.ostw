@@ -15,3 +15,18 @@ if (IsFiringSecondary())
 {
   Damage(Victim(), Attacker(), 0.25 * EventDamage());
 }
+
+playervar Number widowAmmo;
+
+rule: "[heroes/widowmaker.ostw] Reduce scoped shot ammo consumption"
+Event.OngoingPlayer
+if (effectiveHero == Hero.Widowmaker)
+if (widowAmmo != Ammo(EventPlayer(), 0))
+{
+  if (widowAmmo - Ammo(EventPlayer(), 0) == 5 || (widowAmmo <= 5 && widowAmmo > 3 && Ammo(EventPlayer(), 0) == 0)) {
+    SetAmmo(EventPlayer(), 0, Ammo(EventPlayer(), 0) + 2);
+  }
+  widowAmmo = Ammo(EventPlayer(), 0);
+  MinWait();
+  LoopIfConditionIsTrue();
+}
