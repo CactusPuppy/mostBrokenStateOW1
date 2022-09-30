@@ -28,9 +28,6 @@ void setupHero() playervar '[general.ostw] Set up new hero stuff'
     case Hero.Dva:
       setupDVa();
       break;
-    case Hero.Orisa:
-      setupOrisa();
-      break;
     case Hero.Reinhardt:
       setupReinhardt();
       break;
