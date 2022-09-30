@@ -23,3 +23,13 @@ if (EventAbility() == Button.PrimaryFire)
 {
   Heal(Healee(), Healer(), 0.15 * EventHealing());
 }
+
+rule: "[heroes/moira.ostw] no big jumpy jump during fade"
+Event.OngoingPlayer
+if (effectiveHero == Hero.Moira)
+if (IsUsingAbility1())
+{
+  SetJumpVerticalSpeed(EventPlayer(), 50);
+  WaitUntil(!IsUsingAbility1() || effectiveHero != Hero.Moira, 0.8);
+  SetJumpVerticalSpeed(EventPlayer(), 100);
+}
