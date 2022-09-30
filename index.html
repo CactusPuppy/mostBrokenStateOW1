@@ -1,0 +1,206 @@
+<style>
+  .notes {
+    margin-top: 3rem;
+    border: 2px solid #464b4f;
+    background: #1f2326;
+  }
+
+  .notes__header {
+    position: relative;
+    padding: 1rem 1rem 1rem calc(1.5rem + 90px);
+    background: #292e31;
+  }
+
+	.notes__title {
+	  margin: 0 !important;
+	  font-size: 1.5rem;
+	  font-weight: bold;
+	}
+
+  .notes__body {
+    padding: 1rem;
+  }
+
+  .notes__dev {
+    border-left: 4px solid #3fbf74;
+    padding-left: 1rem;
+    margin-bottom: 1rem;
+  }
+
+	.notes__icon {
+    position: absolute;
+    bottom: .5rem;
+    width: 90px;
+	  left: .5rem;
+    background: var(--bg-darker);
+    border: 2px solid var(--text-color);
+  }
+
+	.notes__list {
+    margin: 0;
+  }
+
+  .notes__item {
+		display: flex;
+    align-items: flex-start;
+    margin: 1rem 0 0;
+  }
+
+  .notes__item:first-child {
+    margin-top: 0;
+  }
+
+  .notes__ability {
+    width: calc(32px + .5rem);
+    padding: .25rem;
+    margin-right: .5rem;
+    border: 2px solid var(--text-color-dark);
+  }
+
+	.notes__name {
+    line-height: 1.5rem;
+	  font-weight: bold;
+    color: var(--white);
+	}
+
+  .notes__changes {
+	  margin: 0 0;
+    padding-left: 1.5rem !important;
+	}
+
+  .credit-cards {
+    align-items: flex-start;
+  }
+
+  .credit-cards .card__title {
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+
+
+  .credit-cards strong {
+    display: block;
+    margin-top: .5rem;
+    font-size: .85rem;
+  }
+</style>
+
+<p class="notes__dev"><b>Note:</b> Due to limitations of the Workshop, I could not recreate specific damage or healing number modifications exactly, so I eyeballed some numbers which I believe will, on average, feel and play about the same overall. In addition, not every change was possible to recreate, but I think I got pretty darn close. With that in mind, let's begin!</p>
+
+<div class="notes" id="DVa">
+  <div class="notes__header">
+    <img class="notes__icon" src="https://d15f34w2p8l1cc.cloudfront.net/overwatch/5d9b834a39e9306ec125dd8c77cdd62a351f8edef2d5dfe66d6cbb22594eae7e.png" alt="D.Va hero portrait" loading="lazy">
+    <h5 class="notes__title">D.Va</h5>
+  </div>
+
+  <div class="notes__body">
+    <div class="notes__dev">
+      While D.Va's strongest state had less armor and less mobility, she was far more lethal with her increased burst damage and had a larger defense matrix. Unfortunately, the Workshop is not really able to elegantly increase the size of Defense Matrix, so that part had to be left out.
+    </div>
+    <div class="notes__list">
+      <div class="notes__item">
+        <img src="https://d15f34w2p8l1cc.cloudfront.net/overwatch/29bd15ebb32c23483a59df18a79f71301b2128c05b2f8d0c052ab86e0715e07d.png" alt="D.Va fusion cannons icon" class="notes__ability" loading="lazy">
+
+        <div>
+          <div class="notes__name">Fusion Cannons</div>
+          <ul class="notes__changes">
+            <li>Move speed penalty while firing increased from 40% to 50%</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="notes__item">
+        <img src="https://d15f34w2p8l1cc.cloudfront.net/overwatch/89d6beb25b21eacd5a181b96438436692d9ad403fcef19873e506f6d46ed37a3.png" alt="D.Va boosters icon" class="notes__ability" loading="lazy">
+
+        <div>
+          <div class="notes__name">Boosters</div>
+          <ul class="notes__changes">
+            <li>Impact damage increased from 10 to 25</li>
+            <li>Cooldown increased from 4 to 5 seconds</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="notes__item">
+        <img src="https://d15f34w2p8l1cc.cloudfront.net/overwatch/1787326d46d04aa10872fc30fe512ab3575781735110dfb178ff38da352facb7.png" alt="D.Va micro missiles icon" class="notes__ability" loading="lazy">
+
+        <div>
+          <div class="notes__name">Micro Missiles</div>
+          <ul class="notes__changes">
+            <li>Missile damage increased by 37%</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="notes__item">
+        <img src="https://d15f34w2p8l1cc.cloudfront.net/overwatch/f76e4b710ceb71f2e260029fc8d0ad15b227e3f006ab1b6c0c4e44da98c2d614.png" alt="D.Va self destruct icon" class="notes__ability" loading="lazy">
+
+        <div>
+          <div class="notes__name">Self-Destruct</div>
+          <ul class="notes__changes">
+            <li>Cost decreased from 1540 to 1375</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="notes__item">
+        <img src="https://d15f34w2p8l1cc.cloudfront.net/overwatch/848d8cd24eb0327a023a564447d79dd8b367c21a378d328cd92896a21b775219.png" alt="D.Va call mech icon" class="notes__ability" loading="lazy">
+        <div>
+          <div class="notes__name">Call Mech</div>
+          <ul class="notes__changes">
+            <li>Damage decreased from 250 to 50</li>
+            <li>Cost decreased from 320 to 300</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="notes" id="Orisa">
+  <div class="notes__header">
+    <img src="https://d15f34w2p8l1cc.cloudfront.net/overwatch/1f9cf8dd1ea36ba91440be891d79cd97bd4ac2d2e0e409a8eee0c76a4317617a.png" alt="Orisa hero portrait" class="notes__icon" loading="lazy">
+    <h5 class="notes__title">Orisa</h5>
+  </div>
+
+  <div class="notes__body">
+    <div class="notes__dev">
+      Unfortunately arguably the biggest defining factor of Orisa's most powerful state, her much stronger shield, was not quite able to be replicated in the Workshop. In addition, her Halt!'s original behavior was not possible to replicate either, hence the cooldown not being bumped back to the original 8 seconds.
+    </div>
+
+    <div class="notes__list">
+      <div class="notes__item">
+        <img src="https://d15f34w2p8l1cc.cloudfront.net/overwatch/dd5eae0eb278e6f844f2694ea349cadd782c4e17535dc29e23ba5cd461b85c6a.png" alt="Orisa protective barrier icon" class="notes__ability" loading="lazy">
+
+        <div>
+          <div class="notes__name">Protective Barrier</div>
+          <ul class="notes__changes">
+            <li>Cooldown reduced from 10 to 8 seconds</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="notes__item">
+        <img src="https://d15f34w2p8l1cc.cloudfront.net/overwatch/d697fa90726cf683222920822d2ee00a85e0420c6cbc6ec2365573f313d06357.png" alt="Orisa fortify icon" class="notes__ability" loading="lazy">
+
+        <div>
+          <div class="notes__name">Fortify</div>
+          <ul class="notes__changes">
+            <li>Damage reduction increased from 40% to 50%</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="notes__item">
+        <img src="https://d15f34w2p8l1cc.cloudfront.net/overwatch/613c5ce0514904872b7d7ef026222a34a691674255c4c132acf6ecf276b80640.png" alt="Orisa supercharger icon" class="notes__ability" loading="lazy">
+
+        <div>
+          <div class="notes__name">Supercharger</div>
+          <ul class="notes__changes">
+            <li>Cost reduced from 1680 to 1500</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
