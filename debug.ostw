@@ -1,8 +1,45 @@
 import "main.ostw";
 
+// rule: "DEBUG SANDBOX"
+// Event.OngoingPlayer
+// if (IsButtonHeld(Button: Button.Interact))
+// {
+//   // CreateDummyBot(RandomValueInArray(AllHeroes()), OppositeTeamOf(TeamOf()), -1, PositionOf(), FacingDirectionOf());
+//   CreateDummyBot(Hero.Soldier76, Team.Team2, -1, EyePosition() + 10 * Vector(1, 0, 1) * FacingDirectionOf(), -1 * FacingDirectionOf());
+//   Wait(1);
+//   PressButton(LastCreatedEntity(), Button.SecondaryFire);
+//   Wait(1);
+//   DestroyAllDummyBots();
+// }
+
 rule: "DEBUG SANDBOX"
 Event.OngoingPlayer
 if (IsButtonHeld(Button: Button.Interact))
+if (debugModeEnabled)
 {
-  CreateDummyBot(RandomValueInArray(AllHeroes()), OppositeTeamOf(TeamOf()), -1, PositionOf(), FacingDirectionOf());
+  // CreateDummyBot(RandomValueInArray(AllHeroes()), OppositeTeamOf(TeamOf()), -1, PositionOf(), FacingDirectionOf());
+  CreateDummyBot(Hero.Roadhog, Team.Team1, -1, EyePosition() + 10 * Vector(1, 0, 1) * FacingDirectionOf(), -1 * FacingDirectionOf());
+  Wait(0.25);
+  Damage(LastCreatedEntity(), null, 300);
+  CreateDummyBot(Hero.Roadhog, Team.Team2, -1, EyePosition() + 9 * Vector(1, 0, 1) * FacingDirectionOf(), -1 * FacingDirectionOf());
+  Wait(0.25);
+  Damage(LastCreatedEntity(), null, 300);
+  Wait(10);
+  DestroyAllDummyBots();
+}
+
+rule: "DEBUG heal source"
+Event.OnHealingTaken
+if (debugModeEnabled)
+{
+  SmallMessage(EventPlayer(), <"<0> healing from <1> via <2>", EventHealing(), Healer(), EventAbility()>);
+  Wait(0.25);
+}
+
+rule: "DEBUG damage source"
+Event.OnDamageTaken
+if (debugModeEnabled)
+{
+  SmallMessage(EventPlayer(), <"<0> damage from <1> via <2>", EventDamage(), Attacker(), EventAbility()>);
+  Wait(0.25);
 }

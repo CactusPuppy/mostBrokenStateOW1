@@ -9,6 +9,14 @@ playervar Any shieldHealthPool;
 
 playervar Any selfHealMod;
 
+globalvar Boolean debugModeEnabled = WorkshopSettingToggle("Settings", "Debug Mode Enabled", false, -1);
+
+rule: "[main.ostw] Disable inspector unless in debug mode"
+if (debugModeEnabled != true)
+{
+  DisableInspectorRecording();
+}
+
 
 import "general.ostw";
 
