@@ -99,8 +99,9 @@
       "Moira": {
         "Ultimate Generation (Coalescence)": 131.7647058824,
         "Biotic Energy Maximum": 112,
-        "Healing Dealt": 115,
-        "Biotic Orb Cooldown Time": 125
+        "Biotic Energy Recharge Rate": 87.5,
+        "Biotic Orb Cooldown Time": 125,
+        "Biotic Orb Max Healing Scalar": 86.6666667
       },
       "Zenyatta": {
         "Ultimate Generation (Transcendence)": 140

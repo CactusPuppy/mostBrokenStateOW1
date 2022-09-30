@@ -1,0 +1,26 @@
+import "../main.ostw";
+
+rule: "[heroes/moira.ostw] Make Moira biotic orb healing better"
+Event.OnHealingTaken
+if (Healer().effectiveHero == Hero.Moira)
+if (EventAbility() == Button.Ability2)
+{
+  Heal(Healee(), Healer(), 10 / 65 * EventHealing());
+}
+
+// TODO: MAKE SURE THE EVENT ABILITY IS SECONDARY FIRE AND NOT NULL
+rule: "[heroes/moira.ostw] Make Moira heal more from biotic grasp secondary fire"
+Event.OnHealingDealt
+if (effectiveHero == Hero.Moira)
+if (EventAbility() == Button.SecondaryFire)
+{
+  Heal(Healee(), Healer(), 0.25 * EventHealing());
+}
+
+rule: "[heroes/moira.ostw] bump biotic grasp healing"
+Event.OnHealingDealt
+if (effectiveHero == Hero.Moira)
+if (EventAbility() == Button.PrimaryFire)
+{
+  Heal(Healee(), Healer(), 0.15 * EventHealing());
+}
