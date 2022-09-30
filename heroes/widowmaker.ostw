@@ -1,5 +1,10 @@
 import "../main.ostw";
 
+void setupWidow() playervar "[heroes/widowmaker.ostw] Set up Widowmaker"
+{
+  SetMaxHealth(EventPlayer(), 200/175 * 100);
+}
+
 rule: "[heroes/widowmaker.ostw] Increase non-critical scoped shot damage"
 Event.OnDamageDealt
 if (effectiveHero == Hero.Widowmaker)
