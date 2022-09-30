@@ -52,3 +52,29 @@ if (EventAbility() == Button.Ability2)
   Wait(6, WaitBehavior.IgnoreCondition);
   RemoveHealthPoolFromPlayer(brigOverheal);
 }
+
+playervar Player inspiringPlayer;
+
+rule: "[heroes/brigitte.ostw] Flag inspired players to be healed"
+Event.OnDamageDealt
+if (effectiveHero == Hero.Brigitte)
+if (EventAbility() != null)
+if (IsFiringSecondary() == false)
+{
+  PlayersWithinRadius(EyePosition(), 20, TeamOf(), RadiusLOS.SurfacesAndEnemyBarriers).FilteredArray(player => IsAlive(player)).inspiringPlayer = EventPlayer();
+  Wait(1.5, WaitBehavior.IgnoreCondition);
+}
+
+playervar Any inspireHoT;
+
+rule: "[heroes/brigitte.ostw] Heal inspired players"
+Event.OngoingPlayer
+
+if (inspiringPlayer != null)
+{
+  if (inspireHoT != null) {
+    StopHealOverTime(inspireHoT);
+  }
+  inspireHoT = StartHealOverTime(EventPlayer(), inspiringPlayer, 5, 16);
+  inspiringPlayer = null;
+}
