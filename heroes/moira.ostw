@@ -8,7 +8,6 @@ if (EventAbility() == Button.Ability2)
   Heal(Healee(), Healer(), 10 / 65 * EventHealing());
 }
 
-// TODO: MAKE SURE THE EVENT ABILITY IS SECONDARY FIRE AND NOT NULL
 rule: "[heroes/moira.ostw] Make Moira heal more from biotic grasp secondary fire"
 Event.OnHealingDealt
 if (effectiveHero == Hero.Moira)
