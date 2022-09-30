@@ -105,9 +105,17 @@
     }
   },
   "Modes": {
-    "Assault": {},
-    "Control": {},
-    "Escort": {},
-    "Hybrid": {}
+    "Assault": {
+      "Competitive Rules": true
+    },
+    "Control": {
+      "Competitive Rules": true
+    },
+    "Escort": {
+      "Competitive Rules": true
+    },
+    "Hybrid": {
+      "Competitive Rules": true
+    }
   }
 }
