@@ -20,6 +20,12 @@ void cleanupHero() playervar '[general.ostw] Clean up previous hero stuff'
   RemoveAllHealthPoolsFromPlayer(EventPlayer());
   StopHealingModification(selfHealMod);
   SetMaxHealth(EventPlayer(), 100);
+
+  switch (baseHero) {
+    case Hero.Brigitte:
+      cleanupBrigitte();
+      break;
+  }
 }
 
 void setupHero() playervar '[general.ostw] Set up new hero stuff'
