@@ -1,7 +1,5 @@
 import "../main.ostw";
 
-disabled rule: '=========== D.Va ===========' {}
-
 void setupDVa() playervar '[heroes/d.va.ostw] D.Va setup'
 {
   SetMaxHealth(EventPlayer(), 200/3);

@@ -1,7 +1,5 @@
 import "main.ostw";
 
-disabled rule: '=========== GENERAL ===========' {}
-
 rule: 'Track baseHero'
 Event.OngoingPlayer
 if (baseHero != HeroOf())
