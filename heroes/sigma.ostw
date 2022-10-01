@@ -43,5 +43,5 @@ if (EventAbility() == Button.Ability2)
   WaitUntil(HasStatus(Status: Status.Stunned), 0.048);
   AbortIf(Not(HasStatus(EventPlayer(), Status.Stunned)));
   ClearStatus(EventPlayer(), Status.Stunned);
-  SetStatus(EventPlayer(), Attacker(), Status.Stunned, Min(45, DistanceBetween(Attacker().YEPROCKStartPos, Victim())) * 2.5 / 45 + 0.5);
+  SetStatus(EventPlayer(), Attacker(), Status.KnockedDown, Min(45, DistanceBetween(Attacker().YEPROCKStartPos, PositionOf(Victim()) * Vector(1,0,1))) * 2.5 / 45 + 0.5);
 }
