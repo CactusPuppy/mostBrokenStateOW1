@@ -24,3 +24,24 @@ if (AbilityCooldown(Button: Button.SecondaryFire) < 3)
 {
   SetAbilityCooldown(Button: Button.SecondaryFire, Cooldown: 0.25);
 }
+
+playervar Vector YEPROCKStartPos;
+
+rule: "[heroes/sigma.ostw] Track rock starting location"
+Event.OngoingPlayer
+if (effectiveHero == Hero.Sigma)
+if (IsUsingAbility2())
+{
+  YEPROCKStartPos = PositionOf() * Vector(1,0,1);
+}
+
+rule: "[heroes/sigma.ostw] Make rock stun for more over longer distance"
+Event.OnDamageTaken
+if (Attacker().effectiveHero == Hero.Sigma)
+if (EventAbility() == Button.Ability2)
+{
+  WaitUntil(HasStatus(Status: Status.Stunned), 0.048);
+  AbortIf(Not(HasStatus(EventPlayer(), Status.Stunned)));
+  ClearStatus(EventPlayer(), Status.Stunned);
+  SetStatus(EventPlayer(), Attacker(), Status.Stunned, Min(45, DistanceBetween(Attacker().YEPROCKStartPos, Victim())) * 2.5 / 45 + 0.5);
+}
