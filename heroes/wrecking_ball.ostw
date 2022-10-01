@@ -16,7 +16,7 @@ if (IsUsingAbility2())
         8,
         OppositeTeamOf(TeamOf()),
         RadiusLOS.SurfacesAndEnemyBarriers).FilteredArray(
-          player => IsAlive(player))),
+          player => IsAlive(player))) * 25,
     Recoverable: false);
   WaitUntil(effectiveHero != Hero.WreckingBall || !IsUsingAbility2(), 9);
   RemoveHealthPoolFromPlayer(wreckingBallAdditionalShields);
