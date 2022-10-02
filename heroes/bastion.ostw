@@ -1,7 +1,7 @@
 import "../main.ostw";
 
 playervar Number bastionDamageIroncladMod;
-rule: "[heroes/bastion.ostw] Increase Recon mode ammo"
+rule: "[heroes/bastion.ostw] Decrease Recon mode ammo"
 Event.OngoingPlayer
 if (effectiveHero == Hero.Bastion)
 if (!IsInAlternateForm())
