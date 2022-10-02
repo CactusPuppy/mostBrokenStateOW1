@@ -8,3 +8,12 @@ if (EventDamage() >= 20)
 {
   Damage(Victim(), Attacker(), 0.5 * EventDamage());
 }
+
+rule: "[heroes/ashe.ostw] Increase scoped damage"
+Event.OnDamageDealt
+if (effectiveHero == Hero.Ashe)
+if (EventAbility() == Button.PrimaryFire)
+if (IsFiringSecondary())
+{
+  Damage(Victim(), Attacker(), 1/7 * EventDamage());
+}
