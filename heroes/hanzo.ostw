@@ -5,5 +5,5 @@ Event.OnDamageDealt
 if (effectiveHero == Hero.Hanzo)
 if (EventAbility() == Button.Ability2)
 {
-  Damage(Victim(), Attacker(), 10);
+  Damage(Victim(), Attacker(), 1/7 * EventDamage());
 }
