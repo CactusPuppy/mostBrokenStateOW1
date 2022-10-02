@@ -30,7 +30,8 @@
         "Healing Dealt": 83.3333333
       },
       "Doomfist": {
-        "Ultimate Generation (Meteor Strike)": 112
+        "Ultimate Generation (Meteor Strike)": 112,
+        "Rising Uppercut Cooldown Time": 116.6666666667
       },
       "Echo": {
         "Ammunition Clip Size Scalar": 125,

@@ -15,6 +15,6 @@ if (Attacker().effectiveHero == Hero.Doomfist)
 if (EventAbility() == Button.Ability1)
 {
   StartTransformingThrottle(Victim(), 0.05, 0.05, FacingDirectionOf());
-  WaitUntil(IsDead() || Attacker().effectiveHero != Hero.Doomfist, 3);
+  WaitUntil(IsDead() || IsOnGround() || Attacker().effectiveHero != Hero.Doomfist, 3);
   StopTransformingThrottle();
 }
