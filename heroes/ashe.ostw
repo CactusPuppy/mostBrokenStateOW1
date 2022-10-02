@@ -15,5 +15,5 @@ if (effectiveHero == Hero.Ashe)
 if (EventAbility() == Button.PrimaryFire)
 if (IsFiringSecondary())
 {
-  Damage(Victim(), Attacker(), 1/7 * EventDamage());
+  Damage(Victim(), Attacker(), 10/75 * EventDamage());
 }
