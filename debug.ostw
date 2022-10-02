@@ -33,6 +33,7 @@ if (debugModeEnabled)
 rule: "DEBUG heal source"
 Event.OnHealingTaken
 if (debugModeEnabled)
+if (EventHealing() > 0)
 {
   SmallMessage(AllPlayers(), <"<0> healing from <1> via <2>", EventHealing(), Healer(), EventAbility()>);
   Wait(0.25);
@@ -41,6 +42,7 @@ if (debugModeEnabled)
 rule: "DEBUG damage source"
 Event.OnDamageTaken
 if (debugModeEnabled)
+if (EventDamage() > 0)
 {
   SmallMessage(AllPlayers(), <"<0> damage from <1> via <2>", EventDamage(), Attacker(), EventAbility()>);
   Wait(0.25);
